@@ -12,12 +12,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run a script
         run: |
-          mkdir result
-          g++ main.cpp -o result/sample
-          cd result
-          ./sample
-          10
+          cl /EHsc main.cpp
       - uses: actions/upload-artifact@v3
         with:
           name: artifacts
-          path: result/
+          path: ./
