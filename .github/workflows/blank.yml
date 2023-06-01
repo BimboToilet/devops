@@ -17,6 +17,12 @@ jobs:
         run: |
           mkdir result
           cl /EHsc main.cpp /link /out:result\sample.exe
+      - name: Send result to telegram
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          document: result/sample.exe
       - uses: actions/upload-artifact@v3
         with:
           name: artifacts
