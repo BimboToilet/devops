@@ -11,9 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run a script
-        run: 
-          g++ main.cpp -o sample
+        run: |
+          mkdir result
+          g++ main.cpp -o result/sample
       - uses: actions/upload-artifact@v3
         with:
-          name: Archive production artifacts
-          path: ./
+          name: artifacts
+          path: result/
