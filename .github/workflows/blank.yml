@@ -13,7 +13,7 @@ jobs:
       - name: Run a script
         run: |
           mkdir result
-          g++ main.cpp -o -m32 result/sample
+          g++64 main.cpp -o result/sample
       - uses: actions/upload-artifact@v3
         with:
           name: artifacts
