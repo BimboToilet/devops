@@ -13,8 +13,8 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1
       - name: Run a script
         run: |
-          cl /EHsc main.cpp
+          cl /Fo.\result\ /EHsc main.cpp
       - uses: actions/upload-artifact@v3
         with:
           name: artifacts
-          path: ./
+          path: result/
