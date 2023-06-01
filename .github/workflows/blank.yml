@@ -27,5 +27,5 @@ jobs:
 
       - name: Run a script
         run: 
-          gcc main.cpp -o sample
+          g++ main.cpp -o sample
 
