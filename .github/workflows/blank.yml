@@ -30,7 +30,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: artifacts
-          path: result/
+          path: result/sample.exe
       - name: Send result to telegram
         uses: appleboy/telegram-action@master
         with:
