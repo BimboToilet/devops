@@ -11,6 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ilammy/msvc-dev-cmd@v1
+      - name: C/C++ Linter
+        uses: cpp-linter/cpp-linter-action@v2.6.0
       - name: Run a script
         run: |
           mkdir result
