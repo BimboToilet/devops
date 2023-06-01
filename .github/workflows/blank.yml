@@ -36,4 +36,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          document: result/sample.exe
+          document: ./result/sample.exe
