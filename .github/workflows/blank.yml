@@ -15,7 +15,7 @@ jobs:
           mkdir result
           g++ main.cpp -o result/sample
           cd result
-          sample.exe
+          ./sample
           10
       - uses: actions/upload-artifact@v3
         with:
