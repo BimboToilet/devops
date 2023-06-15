@@ -32,7 +32,7 @@ jobs:
           name: artifacts
           path: result
       - name: Send result to telegram
-        uses: appleboy/telegram-action@master
+      - uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: |
-          ls -la
-          mkdir result
-          docker build -t sample-container:latest . > /result
+      - run: docker build -t sample-container:latest .
+      - uses: ishworkh/docker-image-artifact-upload@v2.0.1
+        with: 
+          image: sample-container:latest
