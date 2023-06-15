@@ -1,6 +1,6 @@
 FROM gcc:latest as build
 COPY . .
-RUN g++ main.cpp -o sample
+RUN g++ -o sample main.cpp
 
 FROM ubuntu:latest
 COPY --from=build sample .
