@@ -37,3 +37,15 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           document: result/sample.exe
+  docker:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          mkdir result
+          docker build -t sample-container:latest . > result
+      - uses: actions/upload-artifact@v3
+        with:
+          name: artifacts/container
+          path: result/
