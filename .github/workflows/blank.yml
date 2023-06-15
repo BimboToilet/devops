@@ -71,3 +71,17 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+  self-hosted:
+    runs-on: self-hosted
+    needs: build
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ilammy/msvc-dev-cmd@v1
+      - name: Run a script
+        run: |
+          mkdir result
+          cl /EHsc main.cpp /link /out:result\sample_on_windows.exe
+      - uses: actions/upload-artifact@v3
+        with:
+          name: artifacts
+          path: result/
