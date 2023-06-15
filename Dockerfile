@@ -4,4 +4,4 @@ RUN mkdir result && g++ -o ./result/sample main.cpp
 
 FROM alpine:latest
 COPY --from=build ./result .
-CMD ["./result/sample"]
+CMD ["./sample"]
