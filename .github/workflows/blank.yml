@@ -43,7 +43,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          docker build -t sample-container:latest .
+          docker build -t ${{ secrets.DOCKER_LOGIN }}/sample-container .
+          docker login
       - uses: ishworkh/docker-image-artifact-upload@v2.0.1
         with: 
-          image: sample-container:latest
+          image: ${{ secrets.DOCKER_LOGIN }}/sample-container:latest
