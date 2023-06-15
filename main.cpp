@@ -1,7 +1,7 @@
 #include <iostream>
 int main() {
-	int a;
-	std::cin >> a;
+	int a=100;
+	//std::cin >> a;
 	for (int i = 0; i < a; i++) {
 		std::cout << i << std::endl;
 	}
