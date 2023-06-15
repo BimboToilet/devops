@@ -1,0 +1,7 @@
+FROM gcc:latest as build
+COPY . .
+RUN mkdir result && gcc -o ./result/sample main.cpp
+
+FROM alpine:latest
+COPY --from=build ./result .
+CMD ["./result/sample"]
