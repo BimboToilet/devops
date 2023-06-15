@@ -78,4 +78,4 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
          docker build -t sample-container .
-         docker run -i -v /tmp:/tmp sample-container /bin/bash
+         docker run -i sample-container /bin/bash
