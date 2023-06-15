@@ -78,4 +78,4 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
          docker build -t sample-container .
-         docker run -i sample-container
+         echo "100" | docker run -i sample-container
