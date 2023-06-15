@@ -42,7 +42,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: docker build -t sample-container:latest .
+      - run: |
+          docker build -t sample-container:latest .
+          docker run sample-container
+          1000
       - uses: ishworkh/docker-image-artifact-upload@v2.0.1
         with: 
           image: sample-container:latest
