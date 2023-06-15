@@ -3,6 +3,6 @@ COPY . .
 RUN g++ main.cpp -o sample
 
 FROM ubuntu:latest
-COPY --from=build sample /usr/local/bin
+COPY --from=build sample .
 RUN chmod +x sample
 CMD ./sample
