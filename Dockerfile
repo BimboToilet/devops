@@ -4,4 +4,4 @@ RUN g++ -o sample main.cpp
 
 FROM ubuntu:latest
 COPY --from=build sample .
-CMD ./sample
+RUN ls -la
