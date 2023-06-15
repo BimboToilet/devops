@@ -6,4 +6,4 @@ FROM alpine:latest
 COPY --from=build sample.exe .
 RUN chmod +x sample.exe
 RUN ls -la
-CMD ["./sample.exe","100"]
+CMD ["sample.exe","100"]
