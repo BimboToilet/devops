@@ -45,8 +45,3 @@ jobs:
       - run: |
           ls -la
           mkdir result
-          docker build -t sample-container:latest . > result
-      - uses: actions/upload-artifact@v3
-        with:
-          name: artifacts/container
-          path: result/
