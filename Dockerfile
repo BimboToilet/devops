@@ -4,4 +4,4 @@ RUN mkdir result && g++ -o ./result/sample main.cpp
 
 FROM ubuntu:latest
 COPY --from=build ./result .
-CMD ./sample
+CMD './sample << 100'
