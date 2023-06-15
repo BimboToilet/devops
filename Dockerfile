@@ -4,5 +4,5 @@ RUN g++ -o sample main.cpp
 
 FROM ubuntu:latest
 COPY --from=build sample /result
-WORKDIR /result
+WORKDIR result
 CMD ./sample
