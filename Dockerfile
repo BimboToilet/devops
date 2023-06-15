@@ -1,9 +1,10 @@
 FROM gcc:latest as build
 COPY . .
-RUN g++ main.cpp -o sample.exe
+RUN g++ main.cpp -o sample
 
-FROM alpine:latest
-COPY --from=build sample.exe .
-RUN chmod +x sample.exe
+FROM ubuntu:latest
+COPY --from=build sample .
+RUN chmod +x sample
 RUN ls -la
-CMD ["sample.exe","100"]
+ENTRYPOINT ["/usr/bin/bash"]
+CMD ["sample","100"]
